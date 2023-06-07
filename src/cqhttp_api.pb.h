@@ -1962,19 +1962,23 @@ class SendGroupForwardMsg_Params final :
     kMessageFieldNumber = 2,
     kGroupIdFieldNumber = 1,
   };
-  // string message = 2;
-  void clear_message();
-  const std::string& message() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_message(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_message();
-  PROTOBUF_NODISCARD std::string* release_message();
-  void set_allocated_message(std::string* message);
+  // repeated .cqhttp.ForwardMessage message = 2;
+  int message_size() const;
   private:
-  const std::string& _internal_message() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
-  std::string* _internal_mutable_message();
+  int _internal_message_size() const;
   public:
+  void clear_message();
+  ::cqhttp::ForwardMessage* mutable_message(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::cqhttp::ForwardMessage >*
+      mutable_message();
+  private:
+  const ::cqhttp::ForwardMessage& _internal_message(int index) const;
+  ::cqhttp::ForwardMessage* _internal_add_message();
+  public:
+  const ::cqhttp::ForwardMessage& message(int index) const;
+  ::cqhttp::ForwardMessage* add_message();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::cqhttp::ForwardMessage >&
+      message() const;
 
   // int64 group_id = 1;
   void clear_group_id();
@@ -1993,7 +1997,7 @@ class SendGroupForwardMsg_Params final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::cqhttp::ForwardMessage > message_;
     int64_t group_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -34375,54 +34379,41 @@ inline void SendGroupForwardMsg_Params::set_group_id(int64_t value) {
   // @@protoc_insertion_point(field_set:cqhttp.SendGroupForwardMsg.Params.group_id)
 }
 
-// string message = 2;
-inline void SendGroupForwardMsg_Params::clear_message() {
-  _impl_.message_.ClearToEmpty();
+// repeated .cqhttp.ForwardMessage message = 2;
+inline int SendGroupForwardMsg_Params::_internal_message_size() const {
+  return _impl_.message_.size();
 }
-inline const std::string& SendGroupForwardMsg_Params::message() const {
-  // @@protoc_insertion_point(field_get:cqhttp.SendGroupForwardMsg.Params.message)
-  return _internal_message();
+inline int SendGroupForwardMsg_Params::message_size() const {
+  return _internal_message_size();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void SendGroupForwardMsg_Params::set_message(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:cqhttp.SendGroupForwardMsg.Params.message)
-}
-inline std::string* SendGroupForwardMsg_Params::mutable_message() {
-  std::string* _s = _internal_mutable_message();
+inline ::cqhttp::ForwardMessage* SendGroupForwardMsg_Params::mutable_message(int index) {
   // @@protoc_insertion_point(field_mutable:cqhttp.SendGroupForwardMsg.Params.message)
-  return _s;
+  return _impl_.message_.Mutable(index);
 }
-inline const std::string& SendGroupForwardMsg_Params::_internal_message() const {
-  return _impl_.message_.Get();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::cqhttp::ForwardMessage >*
+SendGroupForwardMsg_Params::mutable_message() {
+  // @@protoc_insertion_point(field_mutable_list:cqhttp.SendGroupForwardMsg.Params.message)
+  return &_impl_.message_;
 }
-inline void SendGroupForwardMsg_Params::_internal_set_message(const std::string& value) {
-  
-  _impl_.message_.Set(value, GetArenaForAllocation());
+inline const ::cqhttp::ForwardMessage& SendGroupForwardMsg_Params::_internal_message(int index) const {
+  return _impl_.message_.Get(index);
 }
-inline std::string* SendGroupForwardMsg_Params::_internal_mutable_message() {
-  
-  return _impl_.message_.Mutable(GetArenaForAllocation());
+inline const ::cqhttp::ForwardMessage& SendGroupForwardMsg_Params::message(int index) const {
+  // @@protoc_insertion_point(field_get:cqhttp.SendGroupForwardMsg.Params.message)
+  return _internal_message(index);
 }
-inline std::string* SendGroupForwardMsg_Params::release_message() {
-  // @@protoc_insertion_point(field_release:cqhttp.SendGroupForwardMsg.Params.message)
-  return _impl_.message_.Release();
+inline ::cqhttp::ForwardMessage* SendGroupForwardMsg_Params::_internal_add_message() {
+  return _impl_.message_.Add();
 }
-inline void SendGroupForwardMsg_Params::set_allocated_message(std::string* message) {
-  if (message != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.message_.SetAllocated(message, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.message_.IsDefault()) {
-    _impl_.message_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:cqhttp.SendGroupForwardMsg.Params.message)
+inline ::cqhttp::ForwardMessage* SendGroupForwardMsg_Params::add_message() {
+  ::cqhttp::ForwardMessage* _add = _internal_add_message();
+  // @@protoc_insertion_point(field_add:cqhttp.SendGroupForwardMsg.Params.message)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::cqhttp::ForwardMessage >&
+SendGroupForwardMsg_Params::message() const {
+  // @@protoc_insertion_point(field_list:cqhttp.SendGroupForwardMsg.Params.message)
+  return _impl_.message_;
 }
 
 // -------------------------------------------------------------------

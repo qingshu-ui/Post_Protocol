@@ -44,7 +44,7 @@ message SendGroupForwardMsg{
     
     message Params{
         int64 group_id = 1;
-        string message = 2;
+        repeated ForwardMessage message = 2;
     }
 }
 
