@@ -1,0 +1,13 @@
+[requires]
+protobuf/3.21.1
+
+[options]
+protobuf*:shared=True
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[imports]
+bin, *.so -> ./lib
+bin, *.dll -> ./lib
