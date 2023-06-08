@@ -10,5 +10,5 @@ if(MSVC)
     set_property(TARGET Post_Protocol PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
 endif()
 
-find_package(Protobuf CONFIG REQUIRED)
+find_package(protobuf CONFIG REQUIRED)
 target_link_libraries(Post_Protocol PRIVATE protobuf::protobuf)
